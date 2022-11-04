@@ -8,7 +8,7 @@ int guesses;
 int guess;
 string response;
 
-while (playAgain)
+do
 {
 
     guess = 0;
@@ -16,7 +16,7 @@ while (playAgain)
     response = "";
     var number = random.Next(1, 100);
 
-    while (guess != number)
+    do
     {
         Console.WriteLine("Guess a number between 1 to 100");
         guess = Convert.ToInt32(Console.ReadLine());
@@ -30,7 +30,7 @@ while (playAgain)
             Console.WriteLine("You guessed too high, guess lower");
         }
         guesses++;
-    }
+    } while (guess != number);
 
     Console.WriteLine("You guessed the right number!");
     Console.WriteLine("number: " + number);
@@ -50,6 +50,6 @@ while (playAgain)
         playAgain = false;
     }
 
-}
+} while (playAgain);
 Console.WriteLine("Thank You For Playing");
 Console.ReadKey();
